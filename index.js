@@ -29,12 +29,11 @@ d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json").then(f
 
 			for (let block of content) {
 				var section = document.createElement("section")
-				var p = document.createElement("p")
-				var textnode = document.createTextNode(block.Text)
-				p.appendChild(textnode)
-				section.appendChild(p)
+				//var textnode = document.createTextNode()
+				//p.appendChild(textnode)
 				let class_ = 'section-' + index++
 				section.classList.add(class_)
+				section.innerHTML = '<p>' + block.Text + '</p>'
 				article.appendChild(section)
 
 				let wp = new Waypoint({
