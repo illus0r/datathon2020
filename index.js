@@ -13,13 +13,15 @@ d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json").then(f
 			function updateMap(occupation) {
 				console.log(occupation)
 
-				mapDots.selectAll("circles")
+				d3.select('svg#map g').selectAll("circles")
 					.data(data)
 					.attr("r", 2)
 					.attr("fill", "black")
 					.attr("fill-opacity", 0.3)
 				//.append("title")
 				//.text(d => `${d.name}: ${format(d.population)}`);
+
+				console.log("repainter")
 					
 			}
 
@@ -88,13 +90,14 @@ d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json").then(f
 			
 			mapDots.selectAll("circles")
 				.data(data)
-				.join("circle")
-				.attr("fill", "#aa0000")
+				.enter()
+				.append("circle")
+				.attr("fill", "black")
 				.attr("fill-opacity", 0.3)
 				.attr("transform", d => `translate(${projection([d['LONGITUDE'], d.LATITUDE])})`)
 				.attr("r", 2)
-			//.append("title")
-			//.text(d => `${d.name}: ${format(d.population)}`);
+				.append("title")
+				.text(d => `${d.NOTES}`);
 
 
 		})

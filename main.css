@@ -1,6 +1,8 @@
 body {
 	height: 5000px;
 	padding-top: 50%;
+	width: 800px;
+	margin: 0 auto;
 }
 
 svg {
@@ -11,7 +13,6 @@ svg {
 }
 
 article {
-	width: 512px;
 }
 
 section {
