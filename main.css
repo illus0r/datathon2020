@@ -1,0 +1,19 @@
+body {
+	height: 5000px;
+	padding-top: 50%;
+}
+
+svg {
+	position: fixed;
+	top: 0;
+	background: white;
+	width: 100%;
+}
+
+article {
+	width: 512px;
+}
+
+section {
+	margin-bottom: 200px;
+}
